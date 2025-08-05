@@ -24,6 +24,7 @@
     },
   },
   "trustedDependencies": [
+    "@tailwindcss/oxide",
     "@firebase/util",
     "protobufjs",
   ],
