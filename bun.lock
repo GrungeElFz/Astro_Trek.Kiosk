@@ -25,6 +25,8 @@
   },
   "trustedDependencies": [
     "@tailwindcss/oxide",
+    "sharp",
+    "esbuild",
     "@firebase/util",
     "protobufjs",
   ],
