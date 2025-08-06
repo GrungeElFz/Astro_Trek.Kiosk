@@ -14,9 +14,9 @@ interface HeroSlotProps {
 function HeroSlot({ videoId, title, subtitle, buttons }: HeroSlotProps) {
   return (
     <div className="relative flex flex-1 items-center justify-center overflow-hidden border-b-2 border-gray-800 last:border-b-0">
-      <div className="absolute top-0 left-[-100%] z-0 h-full w-[300%]">
+      <div className="absolute z-0 h-[56.25vw] w-[177.77vh] min-h-full min-w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <iframe
-          className="h-full w-full"
+          className="absolute top-0 left-0 h-full w-full"
           src={`https://www.youtube.com/embed/$2{videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0`}
           title="YouTube video player"
           frameBorder="0"
