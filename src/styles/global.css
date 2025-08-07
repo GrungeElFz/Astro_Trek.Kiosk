@@ -118,3 +118,42 @@
     @apply bg-background text-foreground;
   }
 }
+
+/*
+
+___________________________________________________________________________________________
+
+Component: `<ExploreCarousel />`
+Path: src/components/explore/ExploreCarousel.tsx
+Desc: These styles support the Embla Carousel instance used in `<ExploreCarousel />` component.
+
+`.embla` : The main viewport for the carousel, clips overflow.
+`.embla__container` : The scrollable container using flexbox.
+`.embla__slide` : Defines the responsive width of each card.
+___________________________________________________________________________________________
+
+*/
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  gap: 1rem;
+}
+.embla__slide {
+  flex: 0 0 70%;
+  min-width: 0;
+  height: 60vh;
+  max-height: 500px;
+}
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+@media (min-width: 1280px) {
+  .embla__slide {
+    flex: 0 0 calc(100% / 5);
+  }
+}
