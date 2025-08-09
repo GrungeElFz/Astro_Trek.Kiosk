@@ -24,7 +24,7 @@ export function ExploreCard({ cardData, isActive, onClick }: ExploreCardProps) {
             alt={cardData.name}
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           <div className="absolute top-6 left-6 bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
             <cardData.icon className="w-5 h-5" />
           </div>
