@@ -54,7 +54,7 @@ export function HeroSection() {
       id: "RwKqUyAODug",
       title: "See Catalogs",
       subtitle: "The world's best bikes and cycling gear",
-      buttons: [{ text: "See the bikes", href: "#" }],
+      buttons: [{ text: "See the bikes", href: "/explore" }],
     },
     {
       id: "agpgYHxmdCA",
