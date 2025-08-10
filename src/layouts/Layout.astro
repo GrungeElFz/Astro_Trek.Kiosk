@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import { Header } from "@/components/navigation/Header";
 import { MobileHeader } from "@/components/navigation/MobileHeader";
+import { NavigationBar } from "@/components/navigation/NavigationBar";
 
 interface Props {
   title: string;
@@ -23,5 +24,7 @@ const { pathname } = Astro.url;
     <main class="pb-20">
       <slot />
     </main>
+
+    {pathname !== "/" && <NavigationBar client:load />}
   </body>
 </html>
