@@ -6,14 +6,15 @@ interface ExploreSectionProps {
   title: string;
   subtitle: string;
   cards: ExploreCardData[];
+  videoId: string;
 }
 
 export function ExploreSection({
   title,
   subtitle,
   cards,
+  videoId,
 }: ExploreSectionProps) {
-  const videoId = "jo9KVvakFwc";
   const scaleFactor = 1.05;
 
   return (
