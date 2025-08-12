@@ -1,0 +1,14 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ExploreSection } from "@/components/explore/ExploreSection";
+import { mountainBikeCards } from "@/components/explore/ExploreData";
+---
+
+<Layout title="Mountain">
+  <ExploreSection
+    client:load
+    title="Mountain Bikes"
+    subtitle="From fast and flowy singletrack to rugged alpine adventures, find your perfect ride."
+    cards={mountainBikeCards}
+  />
+</Layout>

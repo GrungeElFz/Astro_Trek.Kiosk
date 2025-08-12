@@ -1,8 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { ExploreSection } from "@/components/explore/ExploreSection";
+import { exploreCards } from "@/components/explore/ExploreData";
 ---
 
 <Layout title="Explore">
-  <ExploreSection client:load />
+  <ExploreSection
+    client:load
+    title="Explore the paths"
+    subtitle="Discover the perfect bike for your journey, from mountain peaks to city streets."
+    cards={exploreCards}
+  />
 </Layout>

@@ -2,6 +2,28 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import type { ExploreCardData } from "./ExploreData";
 
+import {
+  MountainSnow,
+  Mountain,
+  Wind,
+  Zap,
+  Bike,
+  Baby,
+  GitCommitVertical,
+  Cog,
+} from "lucide-react";
+
+const iconMap = {
+  MountainSnow,
+  Mountain,
+  Wind,
+  Zap,
+  Bike,
+  Baby,
+  GitCommitVertical,
+  Cog,
+};
+
 interface ExploreCardProps {
   cardData: ExploreCardData;
   isActive: boolean;
@@ -9,6 +31,9 @@ interface ExploreCardProps {
 }
 
 export function ExploreCard({ cardData, isActive, onClick }: ExploreCardProps) {
+  const IconComponent =
+    iconMap[cardData.iconName as keyof typeof iconMap] || Mountain;
+
   return (
     <div className="embla__slide" onClick={onClick}>
       <div
@@ -26,7 +51,7 @@ export function ExploreCard({ cardData, isActive, onClick }: ExploreCardProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           <div className="absolute top-6 left-6 bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
-            <cardData.icon className="w-5 h-5" />
+            <IconComponent className="w-5 h-5" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-left">
             <h3 className="text-2xl font-bold mb-2">{cardData.name}</h3>

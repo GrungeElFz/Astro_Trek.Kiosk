@@ -3,10 +3,14 @@ import type { EmblaCarouselType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { exploreCards } from "./ExploreData";
+import type { ExploreCardData } from "./ExploreData";
 import { ExploreCard } from "./ExploreCard";
 
-export function ExploreCarousel() {
+interface ExploreCarouselProps {
+  cards: ExploreCardData[];
+}
+
+export function ExploreCarousel({ cards }: ExploreCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
@@ -39,7 +43,7 @@ export function ExploreCarousel() {
     <div className="w-full">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
-          {exploreCards.map((card, index) => (
+          {cards.map((card, index) => (
             <ExploreCard
               key={card.id}
               cardData={card}
@@ -70,7 +74,7 @@ export function ExploreCarousel() {
       </div>
 
       <div className="flex justify-center mt-8 space-x-2 z-10">
-        {exploreCards.map((_, index) => (
+        {cards.map((_, index) => (
           <button
             key={index}
             className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${

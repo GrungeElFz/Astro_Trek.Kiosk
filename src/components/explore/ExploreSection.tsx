@@ -1,7 +1,18 @@
 import React from "react";
 import { ExploreCarousel } from "./ExploreCarousel";
+import type { ExploreCardData } from "./ExploreData";
 
-export function ExploreSection() {
+interface ExploreSectionProps {
+  title: string;
+  subtitle: string;
+  cards: ExploreCardData[];
+}
+
+export function ExploreSection({
+  title,
+  subtitle,
+  cards,
+}: ExploreSectionProps) {
   const videoId = "jo9KVvakFwc";
   const scaleFactor = 1.05;
 
@@ -25,20 +36,14 @@ export function ExploreSection() {
           allow="autoplay; encrypted-media"
         ></iframe>
       </div>
-
       <div className="absolute inset-0 z-10 bg-gray-100/5"></div>
 
       <div className="relative z-20 flex w-full flex-col items-center">
         <div className="text-center mb-12 px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Explore the paths
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Discover the perfect bike for your journey, from mountain peaks to
-            city streets.
-          </p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">{subtitle}</p>
         </div>
-        <ExploreCarousel />
+        <ExploreCarousel cards={cards} />
       </div>
     </div>
   );
