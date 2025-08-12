@@ -11,6 +11,10 @@ interface ExploreCarouselProps {
 }
 
 export function ExploreCarousel({ cards }: ExploreCarouselProps) {
+  const MIN_SLIDES_FOR_LOOPING = 5;
+  const displayCards =
+    cards.length <= MIN_SLIDES_FOR_LOOPING ? [...cards, ...cards] : cards;
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
@@ -19,9 +23,13 @@ export function ExploreCarousel({ cards }: ExploreCarouselProps) {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, []);
+  const onSelect = useCallback(
+    (emblaApi: EmblaCarouselType) => {
+      const newSelectedIndex = emblaApi.selectedScrollSnap();
+      setSelectedIndex(newSelectedIndex % cards.length);
+    },
+    [cards.length]
+  );
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -34,21 +42,36 @@ export function ExploreCarousel({ cards }: ExploreCarouselProps) {
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
   const scrollTo = useCallback(
-    (index: number) => emblaApi?.scrollTo(index),
-    [emblaApi]
+    (targetIndex: number) => {
+      if (!emblaApi) return;
+
+      const currentIndex = emblaApi.selectedScrollSnap();
+      const diffToTarget = Math.abs(targetIndex - currentIndex);
+
+      const cloneIndex = targetIndex + cards.length;
+      const diffToClone = Math.abs(cloneIndex - currentIndex);
+
+      if (diffToTarget < diffToClone) {
+        emblaApi.scrollTo(targetIndex);
+      } else {
+        emblaApi.scrollTo(cloneIndex);
+      }
+    },
+    [emblaApi, cards.length]
   );
 
   return (
     <div className="w-full">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
-          {cards.map((card, index) => (
+          {displayCards.map((card, index) => (
             <ExploreCard
-              key={card.id}
+              key={`${card.id}-${index}`}
               cardData={card}
-              isActive={index === selectedIndex}
-              onClick={() => scrollTo(index)}
+              isActive={index % cards.length === selectedIndex}
+              onClick={() => scrollTo(index % cards.length)}
             />
           ))}
         </div>
@@ -72,7 +95,6 @@ export function ExploreCarousel({ cards }: ExploreCarouselProps) {
           <ChevronRight className="w-6 h-6" />
         </Button>
       </div>
-
       <div className="flex justify-center mt-8 space-x-2 z-10">
         {cards.map((_, index) => (
           <button
