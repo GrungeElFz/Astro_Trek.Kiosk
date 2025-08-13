@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ExploreSection } from "@/components/explore/ExploreSection";
+import { gravelBikeCards } from "@/components/explore/ExploreData";
+---
+
+<Layout title="Gravel">
+  <ExploreSection
+    client:load
+    title="Gravel Bikes"
+    subtitle="Versatile bikes perfect for speed on mixed terrains."
+    cards={gravelBikeCards}
+    videoId="4aWRvPz21G8"
+    videoStartTime={20}
+    videoEndTime={42}
+  />
+</Layout>

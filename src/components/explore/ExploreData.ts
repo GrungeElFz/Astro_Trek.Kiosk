@@ -27,7 +27,7 @@ export const exploreCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_1920,c_fill,f_auto,fl_progressive:semi,q_auto/TK23_GravelEditorial_What-is-gravel-riding",
     exploreText: "Explore Gravel",
     iconName: "Mountain",
-    href: "/",
+    href: "/explore/gravel",
   },
   {
     id: "road",
@@ -100,6 +100,41 @@ export const mountainBikeCards: ExploreCardData[] = [
     image:
       "https://media.trekbikes.com/image/upload/w_1920,h_2346,c_pad,f_auto,fl_progressive:semi,q_auto/TK25-MTBBuyersGuide-Column-Travel",
     exploreText: "Explore e-MTB",
+    iconName: "Zap",
+    href: "/",
+  },
+];
+
+export const gravelBikeCards: ExploreCardData[] = [
+  {
+    name: "Gravel",
+    id: "gravel",
+    description: "Versatile bikes perfect for speed on mixed terrains.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK23_GravelEditorial_allroad-2",
+    exploreText: "Explore Gravel",
+    iconName: "Mountain",
+    href: "/",
+  },
+  {
+    name: "Cyclocross",
+    id: "cyclocross",
+    description:
+      "Race machine for explosive speed through mud, grass, and sand.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_768,f_auto,fl_progressive:semi,q_auto/cyclocross2020CatCard",
+    exploreText: "Explore Cyclocross",
+    iconName: "MountainSnow",
+    href: "/",
+  },
+  {
+    name: "e-Gravel",
+    id: "e-gravel",
+    description:
+      "Go farther and faster on any terrain, turns tough climbs into pure fun.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,c_fill,f_auto,fl_progressive:semi,q_auto/TK23_GravelEditorial_Desert-climb-shot",
+    exploreText: "Explore e-Gravel",
     iconName: "Zap",
     href: "/",
   },
