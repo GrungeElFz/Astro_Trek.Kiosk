@@ -7,6 +7,8 @@ interface ExploreSectionProps {
   subtitle: string;
   cards: ExploreCardData[];
   videoId: string;
+  videoStartTime?: number;
+  videoEndTime?: number;
 }
 
 export function ExploreSection({
@@ -14,8 +16,19 @@ export function ExploreSection({
   subtitle,
   cards,
   videoId,
+  videoStartTime,
+  videoEndTime,
 }: ExploreSectionProps) {
   const scaleFactor = 1.05;
+
+  let videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0`;
+
+  if (videoStartTime && videoStartTime > 0) {
+    videoSrc += `&start=${videoStartTime}`;
+  }
+  if (videoEndTime && videoEndTime > 0) {
+    videoSrc += `&end=${videoEndTime}`;
+  }
 
   return (
     <div className="relative flex flex-col items-center justify-center h-screen w-full text-white bg-black overflow-hidden">
@@ -31,7 +44,7 @@ export function ExploreSection({
         <iframe
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none"
           style={{ transform: `scale(${scaleFactor})` }}
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0`}
+          src={videoSrc}
           title="YouTube video player background"
           frameBorder="0"
           allow="autoplay; encrypted-media"
