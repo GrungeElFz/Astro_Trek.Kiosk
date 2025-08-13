@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ExploreSection } from "@/components/explore/ExploreSection";
+import { kidsBikeCards } from "@/components/explore/ExploreData";
+---
+
+<Layout title="Kids">
+  <ExploreSection
+    client:load
+    title="Kids Bikes"
+    subtitle="Safe, fun, and colorful bikes for young riders."
+    cards={kidsBikeCards}
+    videoId="ds7aJyU_QoY"
+    videoStartTime={5}
+    videoEndTime={43}
+  />
+</Layout>

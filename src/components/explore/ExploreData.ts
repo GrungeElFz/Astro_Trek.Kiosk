@@ -67,7 +67,7 @@ export const exploreCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_1920,h_2346,c_pad,f_auto,fl_progressive:semi,q_auto/TK20_900x1100_kids_ages3",
     exploreText: "Explore Fun",
     iconName: "Baby",
-    href: "/",
+    href: "/explore/kids",
   },
 ];
 
@@ -276,6 +276,64 @@ export const electricBikeCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25WhyTrek4x3Road",
     exploreText: "Explore e-Road",
     iconName: "Zap",
+    href: "/",
+  },
+];
+
+export const kidsBikeCards: ExploreCardData[] = [
+  {
+    name: "Wahoo Trail",
+    id: "wahoo-trail",
+    description:
+      "A lightweight, durable bike for trail adventures and inspiring off-road riding.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,c_fill,f_auto,fl_progressive:semi,q_auto/TK23_wahoo_pathandtrail_Shred-school",
+    exploreText: "Explore Trail",
+    iconName: "Mountain",
+    href: "/",
+  },
+  {
+    name: "Wahoo Path",
+    id: "wahoo-path",
+    description:
+      "Cruising neighborhood paths and smooth trails with a versatile, easy-to-ride frame.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,c_fill,f_auto,fl_progressive:semi,q_auto/23-Wahoo-Path-KS-EXNA-_X3A2810",
+    exploreText: "Explore Path",
+    iconName: "Wind",
+    href: "/",
+  },
+  {
+    name: "Precaliber",
+    id: "precaliber",
+    description:
+      "Perfect first bike, stable design, and removable training wheels for confidence.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_800,c_pad,f_auto,fl_progressive:semi,q_auto/_SeenKids_1",
+    exploreText: "Explore Precaliber",
+    iconName: "Baby",
+    href: "/",
+  },
+  {
+    name: "Sprocket",
+    id: "sprocket",
+    description:
+      "A tough and rad bike ready for the skate park, dirt jumps, and neighborhood stunts.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/EBC300020Boys_22_35411_A_Accessory1",
+    exploreText: "Explore Freestyle",
+    iconName: "Flame",
+    href: "/",
+  },
+  {
+    name: "Cruiser",
+    id: "cruiser",
+    description:
+      "The stylish ride for laid-back adventures, comfy seat and an easy-going vibe.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_2346,c_pad,f_auto,fl_progressive:semi,q_auto/KIDS-FFT_9X11",
+    exploreText: "Explore Cruisers",
+    iconName: "Palmtree",
     href: "/",
   },
 ];
