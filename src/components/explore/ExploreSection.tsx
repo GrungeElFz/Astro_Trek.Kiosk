@@ -1,6 +1,42 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { ExploreCarousel } from "./ExploreCarousel";
 import type { ExploreCardData } from "./ExploreData";
+
+const playerConfig = {
+  player: null as YT.Player | null,
+  videoId: "",
+  startTime: 0,
+  endTime: undefined as number | undefined,
+};
+
+function onYouTubeIframeAPIReady() {
+  if (!playerConfig.videoId) return;
+
+  playerConfig.player = new YT.Player(`Youtubeer-${playerConfig.videoId}`, {
+    videoId: playerConfig.videoId,
+    playerVars: {
+      autoplay: 1,
+      mute: 1,
+      controls: 0,
+      showinfo: 0,
+      modestbranding: 1,
+      loop: 0,
+      playsinline: 1,
+      start: playerConfig.startTime,
+      end: playerConfig.endTime,
+    },
+    events: {
+      onReady: (event) => {
+        event.target.playVideo();
+      },
+      onStateChange: (event) => {
+        if (event.data === YT.PlayerState.ENDED) {
+          event.target.seekTo(playerConfig.startTime, true);
+        }
+      },
+    },
+  });
+}
 
 interface ExploreSectionProps {
   title: string;
@@ -16,19 +52,29 @@ export function ExploreSection({
   subtitle,
   cards,
   videoId,
-  videoStartTime,
+  videoStartTime = 0,
   videoEndTime,
 }: ExploreSectionProps) {
   const scaleFactor = 1.05;
 
-  let videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0`;
+  useEffect(() => {
+    playerConfig.videoId = videoId;
+    playerConfig.startTime = videoStartTime;
+    playerConfig.endTime = videoEndTime;
 
-  if (videoStartTime && videoStartTime > 0) {
-    videoSrc += `&start=${videoStartTime}`;
-  }
-  if (videoEndTime && videoEndTime > 0) {
-    videoSrc += `&end=${videoEndTime}`;
-  }
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+
+    if (window.YT && window.YT.Player) {
+      onYouTubeIframeAPIReady();
+    }
+
+    return () => {
+      if (playerConfig.player) {
+        playerConfig.player.destroy();
+        playerConfig.player = null;
+      }
+    };
+  }, [videoId, videoStartTime, videoEndTime]);
 
   return (
     <div className="relative flex flex-col items-center justify-center h-screen w-full text-white bg-black overflow-hidden">
@@ -41,17 +87,13 @@ export function ExploreSection({
           minHeight: `${100 * scaleFactor}vh`,
         }}
       >
-        <iframe
+        <div
+          id={`Youtubeer-${videoId}`}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none"
           style={{ transform: `scale(${scaleFactor})` }}
-          src={videoSrc}
-          title="YouTube video player background"
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-        ></iframe>
+        ></div>
       </div>
       <div className="absolute inset-0 z-10 bg-gray-100/5"></div>
-
       <div className="relative z-20 flex w-full flex-col items-center">
         <div className="text-center mb-12 px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>

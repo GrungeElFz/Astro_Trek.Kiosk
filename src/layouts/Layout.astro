@@ -28,5 +28,7 @@ const { pathname } = Astro.url;
     </main>
 
     {pathname !== "/" && <NavigationBar client:load />}
+
+    <script is:inline src="https://www.youtube.com/iframe_api"></script>
   </body>
 </html>
