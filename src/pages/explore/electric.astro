@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ExploreSection } from "@/components/explore/ExploreSection";
+import { electricBikeCards } from "@/components/explore/ExploreData";
+---
+
+<Layout title="Electric">
+  <ExploreSection
+    client:load
+    title="Electric Bikes"
+    subtitle="Flatten hills and crush headwinds, feels smooth, sleek, and natural."
+    cards={electricBikeCards}
+    videoId="PHzcvXLKu6c"
+    videoStartTime={0}
+    videoEndTime={17}
+  />
+</Layout>

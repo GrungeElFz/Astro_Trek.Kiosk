@@ -57,7 +57,7 @@ export const exploreCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/24-Verveplus-CY-NA-DR_57132_4x3",
     exploreText: "Explore Electric",
     iconName: "Zap",
-    href: "/",
+    href: "/explore/electric",
   },
   {
     id: "kids",
@@ -240,6 +240,42 @@ export const cityBikeCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25CityBGLifestyle5",
     exploreText: "Explore Cargo",
     iconName: "PackagePlus",
+    href: "/",
+  },
+];
+
+export const electricBikeCards: ExploreCardData[] = [
+  {
+    name: "e-City",
+    id: "e-city",
+    description:
+      "Relaxed, upright riding, and features that prioritize pure comfort.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25WhyTrek4x3City",
+    exploreText: "Explore e-City",
+    iconName: "Zap",
+    href: "/",
+  },
+  {
+    name: "e-Mountain",
+    id: "active",
+    description:
+      "Power up climbs and go farther, faster with an electric boost.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25WhyTrek4x3MTB",
+    exploreText: "Explore e-Mountain",
+    iconName: "Zap",
+    href: "/",
+  },
+  {
+    name: "e-Road",
+    id: "e-road",
+    description:
+      "Flatten hills and crush headwinds, feels smooth, sleek, and natural.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25WhyTrek4x3Road",
+    exploreText: "Explore e-Road",
+    iconName: "Zap",
     href: "/",
   },
 ];
