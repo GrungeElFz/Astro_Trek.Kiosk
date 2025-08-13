@@ -40,7 +40,7 @@ export function ExploreCard({ cardData, isActive, onClick }: ExploreCardProps) {
         className="h-full w-full transition-all duration-500 ease-out flex items-center justify-center cursor-pointer"
         style={{
           transform: `scale(${isActive ? 1 : 0.85})`,
-          opacity: isActive ? 1 : 0.5,
+          opacity: isActive ? 1 : 0.4,
         }}
       >
         <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl">
