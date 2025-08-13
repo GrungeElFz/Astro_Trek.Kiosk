@@ -140,24 +140,40 @@ ________________________________________________________________________________
 
 .embla {
   overflow: hidden;
+  width: auto;
+  height: auto;
 }
 .embla__container {
   display: flex;
   gap: 1rem;
+  width: auto;
+  height: auto;
 }
+
+/* --- Mobile Style (for all screens < 768px) --- */
 .embla__slide {
-  flex: 0 0 70%;
+  flex: 0 0 calc(100% / 3);
   min-width: 0;
+  width: 50vw;
+  max-width: 90vw;
   height: 60vh;
-  max-height: 500px;
+  max-height: 50vh;
 }
+
+/* --- Tablet Style (768px and up) --- */
 @media (min-width: 768px) {
   .embla__slide {
     flex: 0 0 calc(100% / 3);
+    min-width: 0;
+    height: 55vh;
   }
 }
+
+/* --- Desktop Style (1280px and up) --- */
 @media (min-width: 1280px) {
   .embla__slide {
     flex: 0 0 calc(100% / 5);
+    min-width: 0;
+    height: 60vh;
   }
 }
