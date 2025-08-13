@@ -1,4 +1,5 @@
 import React from "react";
+import trekLogo from "@/assets/logo.svg";
 
 interface HeaderProps {
   title: string;
@@ -13,7 +14,7 @@ export function Header({ title }: HeaderProps) {
       <div className="w-full flex h-12 items-center justify-between px-8">
         {/* Logo */}
         <a href="/" className="flex items-center">
-          <img src="src/assets/logo.svg" alt="Trek Logo" className="h-3" />
+          <img src={trekLogo.src} alt="Trek Logo" className="h-3" />
         </a>
 
         {/* Page Title */}
