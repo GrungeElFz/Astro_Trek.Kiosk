@@ -11,6 +11,13 @@ import {
   Baby,
   GitCommitVertical,
   Cog,
+  Gem,
+  Timer,
+  Sofa,
+  Flame,
+  BriefcaseBusiness,
+  Palmtree,
+  PackagePlus,
 } from "lucide-react";
 
 const iconMap = {
@@ -22,6 +29,13 @@ const iconMap = {
   Baby,
   GitCommitVertical,
   Cog,
+  Gem,
+  Timer,
+  Sofa,
+  Flame,
+  BriefcaseBusiness,
+  Palmtree,
+  PackagePlus,
 };
 
 interface ExploreCardProps {
