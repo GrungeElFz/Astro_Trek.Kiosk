@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { FastAverageColor } from "fast-average-color";
 import { Button } from "@/components/ui/button";
 import type { ExploreCardData } from "./ExploreData";
 
@@ -48,6 +49,30 @@ export function ExploreCard({ cardData, isActive, onClick }: ExploreCardProps) {
   const IconComponent =
     iconMap[cardData.iconName as keyof typeof iconMap] || Mountain;
 
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [gradientColor, setGradientColor] = useState<string>("#000");
+
+  useEffect(() => {
+    const fac = new FastAverageColor();
+
+    if (imgRef.current) {
+      fac
+        .getColorAsync(imgRef.current)
+        .then((color) => {
+          if (color) {
+            setGradientColor(color.isDark ? color.hex : "#000");
+          }
+        })
+        .catch((e) => {
+          console.error("Error getting average color:", e);
+        });
+    }
+
+    return () => {
+      fac.destroy();
+    };
+  }, [cardData.image]);
+
   return (
     <div className="embla__slide" onClick={onClick}>
       <div
@@ -59,14 +84,24 @@ export function ExploreCard({ cardData, isActive, onClick }: ExploreCardProps) {
       >
         <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl">
           <img
+            ref={imgRef}
             src={cardData.image}
             alt={cardData.name}
+            crossOrigin="anonymous"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+
+          <div
+            className="absolute inset-0 transition-colors duration-500"
+            style={{
+              background: `linear-gradient(to top, ${gradientColor} 10%, transparent 60%)`,
+            }}
+          />
+
           <div className="absolute top-6 left-6 bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
             <IconComponent className="w-5 h-5" />
           </div>
+
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-left">
             <h3 className="text-2xl font-bold mb-2">{cardData.name}</h3>
             <p className="text-white/90 mb-4 h-12 text-sm">
