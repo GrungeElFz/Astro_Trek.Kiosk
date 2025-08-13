@@ -37,7 +37,7 @@ export const exploreCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_1920,c_fill,f_auto,fl_progressive:semi,q_auto/TK23_WEB_Road_Tire_Clearance_Update_Editorial_Marquee_sm",
     exploreText: "Explore Roads",
     iconName: "Wind",
-    href: "/",
+    href: "/explore/road",
   },
   {
     id: "city",
@@ -136,6 +136,53 @@ export const gravelBikeCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_1920,c_fill,f_auto,fl_progressive:semi,q_auto/TK23_GravelEditorial_Desert-climb-shot",
     exploreText: "Explore e-Gravel",
     iconName: "Zap",
+    href: "/",
+  },
+];
+
+export const roadBikeCards: ExploreCardData[] = [
+  {
+    name: "Race",
+    id: "race",
+    description:
+      "Lightest, fastest, and most aerodynamic bikes, engineered to win.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,c_fill,f_auto,fl_progressive:semi,q_auto/25-road-buyers-guide-all-road-bikes-marquee",
+    exploreText: "Explore Race",
+    iconName: "Wind",
+    href: "/",
+  },
+  {
+    name: "Endurance",
+    id: "endurance",
+    description:
+      "Ride longer and stronger with a comfortable all-day adventures on the pavement.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,f_auto,fl_progressive:semi,q_auto/DomaneCarbon_Big_Marquee_19_NEW",
+    exploreText: "Explore Endurance",
+    iconName: "Gem",
+    href: "/",
+  },
+  {
+    name: "e-Road",
+    id: "e-road",
+    description:
+      "Flatten hills and crush headwinds, feels smooth, sleek, and natural.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_2346,c_pad,f_auto,fl_progressive:semi,q_auto/DomaneSLRplus_Why_900x1100_03",
+    exploreText: "Explore e-Road",
+    iconName: "Zap",
+    href: "/",
+  },
+  {
+    name: "Triathlon",
+    id: "triathlon",
+    description:
+      "Radically competitive, built to shave seconds and smash every record.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_800,c_pad,f_auto,fl_progressive:semi,q_auto/knibb_stgeorge_win_3Nov2022_9x11",
+    exploreText: "Explore Triathlon",
+    iconName: "Timer",
     href: "/",
   },
 ];

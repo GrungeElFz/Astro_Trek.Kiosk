@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ExploreSection } from "@/components/explore/ExploreSection";
+import { roadBikeCards } from "@/components/explore/ExploreData";
+---
+
+<Layout title="Road">
+  <ExploreSection
+    client:load
+    title="Road Bikes"
+    subtitle="Experience speed and efficiency on smooth pavement."
+    cards={roadBikeCards}
+    videoId="vVRJUEK0_Bk"
+    videoStartTime={37}
+    videoEndTime={52}
+  />
+</Layout>
