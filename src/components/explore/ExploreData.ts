@@ -47,7 +47,7 @@ export const exploreCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25CityBGLifestyle2",
     exploreText: "Explore Cities",
     iconName: "Bike",
-    href: "/",
+    href: "/explore/city",
   },
   {
     id: "electric",
@@ -183,6 +183,63 @@ export const roadBikeCards: ExploreCardData[] = [
       "https://media.trekbikes.com/image/upload/w_800,c_pad,f_auto,fl_progressive:semi,q_auto/knibb_stgeorge_win_3Nov2022_9x11",
     exploreText: "Explore Triathlon",
     iconName: "Timer",
+    href: "/",
+  },
+];
+
+export const cityBikeCards: ExploreCardData[] = [
+  {
+    name: "Comfort",
+    id: "comfort",
+    description:
+      "Relaxed, upright riding, and features that prioritize pure comfort.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25CityBGLifestyle",
+    exploreText: "Explore Comfort",
+    iconName: "Sofa",
+    href: "/",
+  },
+  {
+    name: "Active",
+    id: "active",
+    description:
+      "Fitness rides or fun cruises, offering a blend of speed, versatility, and performance.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25CityBGLifestyle2",
+    exploreText: "Explore Active",
+    iconName: "Flame",
+    href: "/",
+  },
+  {
+    name: "Commuter",
+    id: "commuter",
+    description: "Daily grind with practical, a reliable ride to work.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25CityBGLifestyle3",
+    exploreText: "Explore Commuter",
+    iconName: "BriefcaseBusiness",
+    href: "/",
+  },
+  {
+    name: "Cruiser",
+    id: "cruiser",
+    description:
+      "Simple, stylish, and fun for casual spins around the neighborhood or boardwalk.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25CityBGLifestyle4",
+    exploreText: "Explore Cruiser",
+    iconName: "Palmtree",
+    href: "/",
+  },
+  {
+    name: "Cargo",
+    id: "cargo",
+    description:
+      "Haul it all with a stable design, perfect for carrying groceries, kids, and more.",
+    image:
+      "https://media.trekbikes.com/image/upload/w_1920,h_1440,c_pad,f_auto,fl_progressive:semi,q_auto/TK25CityBGLifestyle5",
+    exploreText: "Explore Cargo",
+    iconName: "PackagePlus",
     href: "/",
   },
 ];

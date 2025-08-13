@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ExploreSection } from "@/components/explore/ExploreSection";
+import { cityBikeCards } from "@/components/explore/ExploreData";
+---
+
+<Layout title="City">
+  <ExploreSection
+    client:load
+    title="City Bikes"
+    subtitle="Navigate through urban streets in comfort and style."
+    cards={cityBikeCards}
+    videoId="RwKqUyAODug"
+  />
+</Layout>
