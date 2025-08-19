@@ -7,7 +7,7 @@
 export interface Color {
   name: string;
   hero: string;
-  gallery: string[];
+  gallery?: string[];
 }
 
 /**
