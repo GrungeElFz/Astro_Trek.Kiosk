@@ -1,4 +1,5 @@
 import React from "react";
+import trekLogo from "@/assets/logo.svg";
 
 interface MobileHeaderProps {
   title: string;
@@ -13,7 +14,7 @@ export function MobileHeader({ title }: MobileHeaderProps) {
       <div className="w-full flex h-12 items-center justify-between px-6">
         {/* Logo */}
         <a href="/" className="flex items-center">
-          <img src="src/assets/logo.svg" alt="Trek Logo" className="h-3" />
+          <img src={trekLogo.src} alt="Trek Logo" className="h-3" />
         </a>
 
         {/* Page Title */}
